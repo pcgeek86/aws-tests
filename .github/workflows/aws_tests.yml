@@ -3,6 +3,8 @@ name: AWS Tests
 on:
   workflow_dispatch:
   push:
+  schedule:
+    - cron: '*/5 * * * *'
 
 permissions:
   id-token: write
