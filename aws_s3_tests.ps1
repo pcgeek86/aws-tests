@@ -1,4 +1,4 @@
-$global:BucketName = (New-Guid).Guid
+$script:BucketName = (New-Guid).Guid
 
 Describe 'Amazon S3 Tests' {
 
