@@ -1,5 +1,6 @@
+$global:BucketName = (New-Guid).Guid
+
 Describe 'Amazon S3 Tests' {
-    $BucketName = (New-Guid).Guid
 
     It "Should successfully create an S3 Bucket" {
         { New-S3Bucket -BucketName $BucketName } | Should -Not -Throw
