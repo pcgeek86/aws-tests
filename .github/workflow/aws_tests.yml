@@ -1,0 +1,21 @@
+name: AWS Tests
+
+on:
+  workflow_dispatch:
+  push:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  aws_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::987868780346:role/github_aws_tests
+          aws-region: us-west-2
+      - run: pwsh -Command Install-Module -Name AWS.Tools.S3, Pester -Force
+      - run: pwsh -File aws_s3_tests.ps1
