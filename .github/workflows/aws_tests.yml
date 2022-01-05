@@ -20,5 +20,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::987868780346:role/github_aws_tests
           aws-region: us-west-2
-      - run: pwsh -Command Install-Module -Name AWS.Tools.S3, Pester -Force
-      - run: pwsh -File aws_s3_tests.ps1
+      - shell: pwsh
+        run: Install-Module -Name AWS.Tools.S3 -Force
+      - shell: pwsh
+        run: pwsh -File aws_s3_tests.ps1
