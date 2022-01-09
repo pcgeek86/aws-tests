@@ -2,7 +2,7 @@ name: AWS Tests
 
 on:
   workflow_dispatch:
-  push:
+  #push:
   schedule:
     - cron: '0/5 * * * *'
 
@@ -22,5 +22,9 @@ jobs:
           aws-region: us-west-2
       - shell: pwsh
         run: Install-Module -Name AWS.Tools.S3 -Force
-      - shell: pwsh
-        run: pwsh -File aws_s3_tests.ps1
+      - name: Run Amazon S3 Tests
+        shell: pwsh
+        run: ./aws_s3_tests.ps1
+#       - name: Run Amazon EC2 Tests
+#         shell: pwsh
+#         run: ./aws_ec2_tests.ps1
