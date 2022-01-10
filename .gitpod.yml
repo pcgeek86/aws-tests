@@ -1,5 +1,5 @@
 tasks:
-  init: |
-    wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.1/powershell-lts_7.2.1-1.deb_amd64.deb
-    sudo dpkg --install powershell-lts_7.2.1-1.deb_amd64.deb
-    pwsh -Command Install-Module -Name AWSPowerShell -Force
+  - init: |
+      wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.1/powershell-lts_7.2.1-1.deb_amd64.deb
+      sudo dpkg --install powershell-lts_7.2.1-1.deb_amd64.deb
+      pwsh -Command Install-Module -Name AWSPowerShell -Force
