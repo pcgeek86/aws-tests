@@ -21,7 +21,7 @@ jobs:
           role-to-assume: arn:aws:iam::987868780346:role/github_aws_tests
           aws-region: us-west-2
       - shell: pwsh
-        run: Install-Module -Name AWS.Tools.S3, AWS.Tools.StepFunctions -Force
+        run: Install-Module -Name AWS.Tools.S3, AWS.Tools.StepFunctions, AWS.Tools.IdentityManagement -Force
       - name: Run Amazon S3 Tests
         shell: pwsh
         run: ./aws_s3_tests.ps1
