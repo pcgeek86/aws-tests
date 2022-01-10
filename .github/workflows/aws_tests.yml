@@ -25,6 +25,6 @@ jobs:
       - name: Run Amazon S3 Tests
         shell: pwsh
         run: ./aws_s3_tests.ps1
-#       - name: Run Amazon EC2 Tests
-#         shell: pwsh
-#         run: ./aws_ec2_tests.ps1
+      - name: Run AWS Step Functions Tests
+        shell: pwsh
+        run: ./run-tests.ps1
